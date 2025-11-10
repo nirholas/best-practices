@@ -211,6 +211,8 @@ To confirm you are the owner of that NFT (the NFT links to the file, the file li
 }
 ```
 
+The `agentRegistry` format is `namespace:chainId:contractAddress` (e.g., `eip155` for EVM chains, `11155111` for Sepolia testnet, and the registry contract address).
+
 This creates a **cryptographic link** between your on-chain NFT identity and your off-chain capabilities file (and viceversa)
 
 ---
@@ -224,19 +226,6 @@ Why not show that you're using **x402** payment protocol? This binary flag indic
 ```json
 {
   "x402support": true
-}
-```
-
-When users leave feedback, they can include payment proofs like this:
-
-```json
-{
-  "proof_of_payment": {
-    "fromAddress": "0x123...",
-    "toAddress": "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7",
-    "chainId": "1",
-    "txHash": "0xabc..." 
-  }
 }
 ```
 
@@ -283,18 +272,6 @@ Here's a complete registration file for a production-ready crypto trading agent:
         "market_sentiment_analysis",
         "gas_price_estimator",
         "defi_protocol_integrator"
-      ]
-    },
-    {
-      "name": "A2A",
-      "endpoint": "https://api.cryptotrader-alpha.io/.well-known/agent-card.json",
-      "version": "0.3.0",
-      "a2aSkills": [
-        "analytical_skills/mathematical_reasoning/pure_math_operations",
-        "data_engineering/data_transformation_pipeline",
-        "advanced_reasoning_planning/strategic_planning",
-        "natural_language_processing/information_retrieval_synthesis/question_answering",
-        "agent_orchestration/task_decomposition"
       ]
     },
     {
