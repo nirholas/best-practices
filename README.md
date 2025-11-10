@@ -8,6 +8,8 @@ Here is how to register your agent in a way that will make it look great on all 
 
 ## Rule 1: Name, Image, and Description are your gateway to the world! 🌍
 
+![Rule 1](images/Rule1.png)
+
 Your agent's first impression matters. Think of your registration as your agent's business card that will be displayed across all ERC-721 compatible applications, explorers, and marketplaces.
 
 **Name**: Keep it clear, memorable, and descriptive. This is how users will find and remember your agent.
@@ -30,6 +32,8 @@ Your agent's first impression matters. Think of your registration as your agent'
 ---
 
 ## Rule 2: Always put an endpoint (or more!)
+
+![Rule 2](images/Rule2.png)
 
 You want to be reached, right? Your agent needs to advertise how others can communicate with it. Most agents use **MCP** or **A2A**, but you can also advertise your ENS name, DID, and wallet addresses.
 
@@ -133,16 +137,19 @@ register(
 
 ## Rule 3: Tell us what you can do! 🎯
 
+![Rule 3](images/Rule3.png)
+
 Are you in **finance**? Can you do **data analysis**? **Healthcare informatics**? **Image generation**? Let us know! Explorers use this information to group and filter agents in meaningful ways.
 
 **OASF** (Open Agentic Schema Framework) from agntcy (now part of the Linux Foundation) did a great job in creating standardized taxonomies for agent capabilities:
 
 - **Domains**: Fields of application and knowledge areas (e.g., `technology/software_engineering`, `healthcare/telemedicine`, `finance_and_business/investment_services`)
-- **Skills**: Specific capabilities agents can perform (e.g., `natural_language_processing/summarization`, `images_computer_vision/object_detection`, `data_engineering/data_cleaning`)
+- **Skills**: Specific capabilities agents can perform (e.g., `natural_language_processing/natural_language_generation/summarization`, `images_computer_vision/object_detection`, `data_engineering/data_cleaning`)
 
 Explore the full schema:
 - **Public Website**: https://schema.oasf.outshift.com/0.8.0
 - **GitHub Repository**: https://github.com/agntcy/oasf/tree/v0.8.0
+- **Ready-to-use JSONs**: We've prepared complete lists for you: [all_skills.json](all_skills.json) · [all_domains.json](all_domains.json) · [all_skills_and_domains.json](all_skills_and_domains.json)
 
 ### Example with OASF
 
@@ -181,7 +188,7 @@ If your agent specializes in financial data analysis with visualization capabili
 - `real_estate/property_management` - for property management agents
 
 **Real-world example skills you might use:**
-- `natural_language_processing/summarization` - condensing documents
+- `natural_language_processing/natural_language_generation/summarization` - condensing documents
 - `images_computer_vision/object_detection` - identifying objects in images
 - `agent_orchestration/task_decomposition` - breaking down complex tasks
 - `security_privacy/vulnerability_analysis` - security auditing
@@ -255,26 +262,39 @@ Once you've tested everything and you're ready to accept real users:
 
 ## Let's Put It All Together! 🎉
 
-Here's a complete registration file for a production-ready data analysis agent:
+Here's a complete registration file for a production-ready crypto trading agent:
 
 ```json
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
-  "name": "DataAnalyst Pro",
-  "description": "A specialized AI agent that performs advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases. Integrates with popular BI tools. Pricing: 0.001 ETH per query or 0.05 ETH/month subscription. Available 24/7 with sub-second response times.",
-  "image": "https://cdn.example.com/dataanalyst-pro.png",
+  "name": "CryptoTrader Alpha",
+  "description": "An autonomous AI trading agent that manages crypto portfolios on your behalf using advanced DeFi strategies. Supports automated trading on DEXs, yield optimization, risk management, and real-time market analysis. Trades on Ethereum, Base, Arbitrum, and Polygon. Features: portfolio rebalancing, stop-loss protection, MEV-resistant execution, gas optimization. Pricing: 2% performance fee on profits, no management fees. Minimum portfolio: 0.5 ETH. Audited smart contracts, non-custodial.",
+  "image": "https://cdn.cryptotrader-alpha.io/logo.png",
   "endpoints": [
     {
       "name": "MCP",
-      "endpoint": "https://api.dataanalyst-pro.com/mcp",
+      "endpoint": "https://api.cryptotrader-alpha.io/mcp",
       "version": "2025-06-18",
       "mcpTools": [
-        "data_analysis",
-        "chart_generation",
-        "statistical_modeling",
-        "report_creation",
-        "csv_parser",
-        "sql_query_builder"
+        "portfolio_analysis",
+        "execute_trade",
+        "risk_assessment",
+        "yield_optimizer",
+        "market_sentiment_analysis",
+        "gas_price_estimator",
+        "defi_protocol_integrator"
+      ]
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://api.cryptotrader-alpha.io/.well-known/agent-card.json",
+      "version": "0.3.0",
+      "a2aSkills": [
+        "analytical_skills/mathematical_reasoning/pure_math_operations",
+        "data_engineering/data_transformation_pipeline",
+        "advanced_reasoning_planning/strategic_planning",
+        "natural_language_processing/information_retrieval_synthesis/question_answering",
+        "agent_orchestration/task_decomposition"
       ]
     },
     {
@@ -282,24 +302,31 @@ Here's a complete registration file for a production-ready data analysis agent:
       "endpoint": "https://github.com/agntcy/oasf/",
       "version": "v0.8.0",
       "skills": [
-        "analytical_skills/coding_skills/text_to_code",
         "analytical_skills/mathematical_reasoning/pure_math_operations",
-        "data_engineering/data_cleaning",
+        "analytical_skills/mathematical_reasoning/math_word_problems",
         "data_engineering/data_transformation_pipeline",
-        "data_engineering/feature_engineering",
+        "data_engineering/data_quality_assessment",
+        "evaluation_monitoring/anomaly_detection",
+        "evaluation_monitoring/performance_monitoring",
         "evaluation_monitoring/quality_evaluation",
-        "multi_modal/image_processing/text_to_image",
+        "advanced_reasoning_planning/strategic_planning",
+        "advanced_reasoning_planning/long_horizon_reasoning",
+        "agent_orchestration/task_decomposition",
         "natural_language_processing/information_retrieval_synthesis/question_answering",
-        "tabular_text/tabular_classification"
+        "natural_language_processing/analytical_reasoning/problem_solving",
+        "security_privacy/vulnerability_analysis",
+        "tabular_text/tabular_classification",
+        "tabular_text/tabular_regression"
       ],
       "domains": [
         "finance_and_business/finance",
         "finance_and_business/investment_services",
-        "technology/data_science/data_visualization",
+        "technology/blockchain/cryptocurrency",
+        "technology/blockchain/defi",
+        "technology/blockchain/smart_contracts",
         "technology/data_science/data_engineering",
         "technology/software_engineering/apis_integration",
-        "marketing_and_advertising/market_research",
-        "marketing_and_advertising/marketing_analytics"
+        "technology/security/cybersecurity"
       ]
     },
     {
@@ -309,14 +336,16 @@ Here's a complete registration file for a production-ready data analysis agent:
   ],
   "registrations": [
     {
-      "agentId": 241,
-      "agentRegistry": "eip155:11155111:0x8004a6090Cd10A7288092483047B097295Fb8847"
+      "agentId": 42,
+      "agentRegistry": "eip155:1:0x8004a6090Cd10A7288092483047B097295Fb8847"
     }
   ],
   "supportedTrusts": [
-    "reputation"
+    "reputation",
+    "crypto-economic"
   ],
   "active": true,
   "x402support": true
 }
 ```
+
