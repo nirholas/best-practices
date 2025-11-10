@@ -1,0 +1,79 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "myAgentName",
+  "description": "A natural language description of the Agent",
+  "image": "https://example.com/agent-image.png",
+  "endpoints": [
+    {
+      "name": "MCP",
+      "endpoint": "https://api.example.com/mcp",
+      "version": "2025-06-18",
+      "mcpTools": [
+        "data_analysis",
+        "chart_generation",
+        "report_creation"
+      ],
+      "mcpPrompts": [
+        "prompt_1",
+        "prompt_2",
+        "prompt_3"
+      ],
+      "mcpResources": [
+        "resource_1",
+        "resource_2",
+        "resource_3"
+      ]
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://api.example.com/a2a",
+      "version": "0.30",
+      "a2aSkills": [
+        "skill_1",
+        "skill_2",
+        "skill_3"
+      ]
+    },
+    {
+      "name": "OASF",
+      "endpoint": "https://github.com/agntcy/oasf/",
+      "version": "v0.8.0",
+      "skills": [
+        "skill_1",
+        "skill_2",
+        "skill_3"
+      ],
+      "domains": [
+        "domain_1",
+        "domain_2"
+      ]
+    },
+    {
+      "name": "ENS",
+      "endpoint": "vitalik.eth",
+      "version": "v1"
+    },
+    {
+      "name": "DID",
+      "endpoint": "did:method:foobar",
+      "version": "v1"
+    },
+    {
+      "name": "agentWallet",
+      "endpoint": "eip155:1:0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb7"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": 241,
+      "agentRegistry": "eip155:11155111:0x8004a6090Cd10A7288092483047B097295Fb8847"
+    }
+  ],
+  "supportedTrusts": [
+    "reputation",
+    "crypto-economic",
+    "tee-attestation"
+  ],
+  "active": true,
+  "x402support": true
+}
