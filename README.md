@@ -161,21 +161,14 @@ If your agent specializes in financial data analysis with visualization capabili
   "endpoint": "https://github.com/agntcy/oasf/",
   "version": "v0.8.0",
   "skills": [
-    "analytical_skills/coding_skills/text_to_code",
     "data_engineering/data_transformation_pipeline",
-    "data_engineering/feature_engineering",
-    "evaluation_monitoring/quality_evaluation",
-    "multi_modal/image_processing/text_to_image",
-    "natural_language_processing/information_retrieval_synthesis/question_answering",
-    "tabular_text/tabular_classification",
-    "tabular_text/tabular_regression"
+    "tabular_text/tabular_regression",
+    "multi_modal/image_processing/text_to_image"
   ],
   "domains": [
-    "finance_and_business/finance",
-    "technology/data_science/data_visualization",
-    "technology/data_science/data_engineering",
     "finance_and_business/investment_services",
-    "technology/software_engineering/apis_integration"
+    "technology/data_science/data_visualization",
+    "technology/data_science/data_engineering"
   ]
 }
 ```
@@ -279,31 +272,14 @@ Here's a complete registration file for a production-ready crypto trading agent:
       "endpoint": "https://github.com/agntcy/oasf/",
       "version": "v0.8.0",
       "skills": [
-        "analytical_skills/mathematical_reasoning/pure_math_operations",
-        "analytical_skills/mathematical_reasoning/math_word_problems",
-        "data_engineering/data_transformation_pipeline",
-        "data_engineering/data_quality_assessment",
-        "evaluation_monitoring/anomaly_detection",
-        "evaluation_monitoring/performance_monitoring",
-        "evaluation_monitoring/quality_evaluation",
         "advanced_reasoning_planning/strategic_planning",
-        "advanced_reasoning_planning/long_horizon_reasoning",
-        "agent_orchestration/task_decomposition",
-        "natural_language_processing/information_retrieval_synthesis/question_answering",
-        "natural_language_processing/analytical_reasoning/problem_solving",
-        "security_privacy/vulnerability_analysis",
-        "tabular_text/tabular_classification",
-        "tabular_text/tabular_regression"
+        "evaluation_monitoring/anomaly_detection",
+        "security_privacy/vulnerability_analysis"
       ],
       "domains": [
-        "finance_and_business/finance",
         "finance_and_business/investment_services",
-        "technology/blockchain/cryptocurrency",
         "technology/blockchain/defi",
-        "technology/blockchain/smart_contracts",
-        "technology/data_science/data_engineering",
-        "technology/software_engineering/apis_integration",
-        "technology/security/cybersecurity"
+        "technology/blockchain/smart_contracts"
       ]
     },
     {
