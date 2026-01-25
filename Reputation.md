@@ -81,3 +81,7 @@ Even for off-chain indexers, it’s not straightforward to distinguish between *
 ERC-8004 feedback makes it possible for those parties to publish standardized revenue signals (e.g., `tag1 = revenues`) on-chain. Each publisher can post the cumulative revenue value they observe for a given agent, making these data points **public** and available to the entire community—so catalogs, explorers, and other applications can filter/weight by trusted `clientAddress` and build consistent views without relying on a single proprietary dashboard.
 
 More use cases coming soon!
+
+## Expandability
+
+For simplicity, the use cases on this page focus on signals that can be expressed with **on-chain fields only**. However, ERC-8004 is designed to be expandable: feedback can optionally include an **off-chain file URI** (for example an IPFS URI) containing richer context, plus a hash for integrity when applicable.
