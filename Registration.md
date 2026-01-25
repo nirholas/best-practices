@@ -10,7 +10,7 @@ Here is how to register your agent in a way that will make it look great on all 
 
 ## Rule 1: Name, Image, and Description are your gateway to the world! 🌍
 
-![Rule 1](images/Rule1.png)
+![Rule 1](src/images/Rule1.png)
 
 Your agent's first impression matters. Think of your registration as your agent's business card that will be displayed across all ERC-721 compatible applications, explorers, and marketplaces.
 
@@ -35,7 +35,7 @@ Your agent's first impression matters. Think of your registration as your agent'
 
 ## Rule 2: Always put a service (or more!)
 
-![Rule 2](images/Rule2.png)
+![Rule 2](src/images/Rule2.png)
 
 You want to be reached, right? Your agent needs to advertise how others can communicate with it via one or more **services**. Most agents use **MCP** or **A2A**, but you can also advertise your ENS name and DID.
 
@@ -139,7 +139,7 @@ register(
 
 ## Rule 3: Tell us what you can do! 🎯
 
-![Rule 3](images/Rule3.png)
+![Rule 3](src/images/Rule3.png)
 
 Are you in **finance**? Can you do **data analysis**? **Healthcare informatics**? **Image generation**? Let us know! Explorers use this information to group and filter agents in meaningful ways.
 
@@ -151,7 +151,7 @@ Are you in **finance**? Can you do **data analysis**? **Healthcare informatics**
 Explore the full schema:
 - **Public Website**: https://schema.oasf.outshift.com/0.8.0
 - **GitHub Repository**: https://github.com/agntcy/oasf/tree/v0.8.0
-- **Ready-to-use JSONs**: We've prepared complete lists for you: [all_skills.json](all_skills.json) · [all_domains.json](all_domains.json) · [all_skills_and_domains.json](all_skills_and_domains.json)
+- **Ready-to-use JSONs**: We've prepared complete lists for you: [all_skills.json](src/all_skills.json) · [all_domains.json](src/all_domains.json) · [all_skills_and_domains.json](src/all_skills_and_domains.json)
 
 ### Example with OASF
 
