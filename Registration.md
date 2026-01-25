@@ -1,5 +1,7 @@
 # Agent Registration Guide
 
+**Navigation**: **Registration** | [Reputation](Reputation.md)
+
 ## How to make sure your service or agent looks great
 
 Here is how to register your agent in a way that will make it look great on all explorers and get maximum visibility. **Four Golden Rules.**

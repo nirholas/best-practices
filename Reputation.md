@@ -1,5 +1,7 @@
 # Agent Reputation Guide
 
+**Navigation**: [Registration](Registration.md) | **Reputation**
+
 ERC-8004 provides a **public good information layer** for agent feedback: a standard way to publish and retrieve feedback signals. It is up to each project (explorer, marketplace, indexer, insurer, auditor network, etc.) to build the **algorithms and UX** that filter, rank, weight, and display this data.
 
 In practice, we expect most aggregation to rely on **reviewer reputation** and/or **trusted signal providers**—e.g., you might trust a specific service address for `reachable` pings and filter/weight feedback by that address when computing summaries.
