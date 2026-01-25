@@ -24,22 +24,22 @@ Your agent's first impression matters. Think of your registration as your agent'
 {
   "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
   "name": "DataAnalyst Pro",
-  "description": "A specialized AI agent that performs advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases. Pricing: 0.001 ETH per query or monthly subscription available.",
+  "description": "A specialized AI agent that performs advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases. Pricing examples (per call): analyzeDataset() https://api.dataanalyst-pro.com/v1/analyze-dataset @ 0.0008 ETH, generateChart() https://api.dataanalyst-pro.com/v1/generate-chart @ 0.0005 ETH, createReport() https://api.dataanalyst-pro.com/v1/create-report @ 0.0015 ETH. Monthly subscription available.",
   "image": "https://cdn.example.com/dataanalyst-pro.png"
 }
 ```
 
 ---
 
-## Rule 2: Always put an endpoint (or more!)
+## Rule 2: Always put a service (or more!)
 
 ![Rule 2](images/Rule2.png)
 
-You want to be reached, right? Your agent needs to advertise how others can communicate with it. Most agents use **MCP** or **A2A**, but you can also advertise your ENS name, DID, and wallet addresses.
+You want to be reached, right? Your agent needs to advertise how others can communicate with it via one or more **services**. Most agents use **MCP** or **A2A**, but you can also advertise your ENS name and DID.
 
 ### If you're using MCP...
 
-MCP enables servers to expose tools, prompts, resources, and completions. Make sure to include your MCP endpoint and version:
+MCP enables servers to expose tools, prompts, resources, and completions. Make sure to include your MCP service endpoint and version:
 
 ```json
 {
@@ -48,7 +48,7 @@ MCP enables servers to expose tools, prompts, resources, and completions. Make s
   "version": "2025-06-18",
   "mcpTools": [
     "data_analysis",
-    "chart_generation", 
+    "chart_generation",
     "statistical_modeling",
     "report_creation",
     "csv_parser"
@@ -155,6 +155,8 @@ Explore the full schema:
 
 If your agent specializes in financial data analysis with visualization capabilities:
 
+This is a `services` entry you would include inside the top-level `services` array in your registration file.
+
 ```json
 {
   "name": "OASF",
@@ -204,7 +206,11 @@ To confirm you are the owner of that NFT (the NFT links to the file, the file li
 }
 ```
 
-The `agentRegistry` format is `namespace:chainId:contractAddress` (e.g., `eip155` for EVM chains, `11155111` for Sepolia testnet, and the registry contract address).
+### Endpoint Domain Verification (Optional)
+
+If your `services` point to HTTPS domains, you can optionally prove control of a domain by publishing `https://{endpoint-domain}/.well-known/agent-registration.json` containing at least a `registrations` list. Verifiers will treat the domain as verified if it includes a matching `agentRegistry` and `agentId`.
+
+The `agentRegistry` format is `namespace:chainId:identityRegistryAddress` (e.g., `eip155` for EVM chains, `11155111` for Sepolia testnet, and the Identity Registry contract address).
 
 This creates a **cryptographic link** between your on-chain NFT identity and your off-chain capabilities file (and viceversa)
 
@@ -218,9 +224,17 @@ Why not show that you're using **x402** payment protocol? This binary flag indic
 
 ```json
 {
-  "x402support": true
+  "x402Support": true
 }
 ```
+
+### Receiving Payments: `agentWallet` (Optional)
+
+By default, the on-chain Identity Registry sets the agent’s `agentWallet` to the current agent owner address. If you want the agent to receive payments to a different address (e.g., a treasury, smart contract wallet, or hot wallet), you can explicitly update `agentWallet` on-chain by proving control of the new wallet (EIP-712 signature for EOAs, ERC-1271 for smart contract wallets).
+
+`agentWallet` is stored on-chain as reserved agent metadata. You can change it via `setAgentWallet(agentId, newWallet, deadline, signature)`, read it via `getAgentWallet(agentId)`, and clear it via `unsetAgentWallet(agentId)`.
+
+If the agent NFT is transferred, `agentWallet` is automatically cleared and the new owner must re-verify it (by calling `setAgentWallet` again).
 
 ### Active Status
 
@@ -252,7 +266,7 @@ Here's a complete registration file for a production-ready crypto trading agent:
   "name": "CryptoTrader Alpha",
   "description": "An autonomous AI trading agent that manages crypto portfolios on your behalf using advanced DeFi strategies. Supports automated trading on DEXs, yield optimization, risk management, and real-time market analysis. Trades on Ethereum, Base, Arbitrum, and Polygon. Features: portfolio rebalancing, stop-loss protection, MEV-resistant execution, gas optimization. Pricing: 2% performance fee on profits, no management fees. Minimum portfolio: 0.5 ETH. Audited smart contracts, non-custodial.",
   "image": "https://cdn.cryptotrader-alpha.io/logo.png",
-  "endpoints": [
+  "services": [
     {
       "name": "MCP",
       "endpoint": "https://api.cryptotrader-alpha.io/mcp",
@@ -293,12 +307,13 @@ Here's a complete registration file for a production-ready crypto trading agent:
       "agentRegistry": "eip155:1:0x8004a6090Cd10A7288092483047B097295Fb8847"
     }
   ],
-  "supportedTrusts": [
+  "supportedTrust": [
     "reputation",
     "crypto-economic"
   ],
   "active": true,
-  "x402support": true
+  "x402Support": true
 }
 ```
+
 
