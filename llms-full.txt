@@ -1,0 +1,18 @@
+# best-practices
+
+> best-practices
+
+## Overview
+
+best-practices is an open-source project by nirholas. best-practices
+
+## Repository
+
+- URL: https://github.com/nirholas/best-practices
+- Language: Unknown
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.

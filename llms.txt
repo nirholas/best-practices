@@ -1,0 +1,9 @@
+# best-practices
+
+> best-practices
+
+## Links
+
+- Repository: https://github.com/nirholas/best-practices
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/best-practices/main/llms-full.txt
